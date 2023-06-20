@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body{
+      background-image: url(counter\ app\ background.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    /* CSS Styles */
+    .counter-container {
+      border: 4px solid;
+      border-color: antiquewhite;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .counter-value {
+      
+      font-size: 36px;
+      color: aliceblue;
+    }
+
+    .counter-buttons {
+      margin-top: 20px;
+      
+    }
+
+    .counter-button {
+      font-size: 24px;
+      padding: 10px 20px;
+      margin: 0 5px;
+      cursor: pointer;
+      color: brown;
+    }
+  </style>
+</head>
+<body>
+  <!-- HTML Markup -->
+  <div class="counter-container">
+    <div class="counter-value" id="counter">0</div>
+    <div class="counter-buttons">
+      <button class="counter-button" onclick="decrease()">-</button>
+      <button class="counter-button" onclick="increase()">+</button>
+      <button class="counter-button" onclick="reset()">Reset</button>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript logic for the counter app
+    var counterValue = 0;
+    var counterElement = document.getElementById("counter");
+
+    function updateCounter() {
+      counterElement.textContent = counterValue;
+    }
+
+    function increase() {
+      counterValue++;
+      updateCounter();
+    }
+
+    function decrease() {
+      counterValue--;
+      updateCounter();
+    }
+
+    function reset() {
+      counterValue = 0;
+      updateCounter();
+    }
+  </script>
+</body>
+</html>
